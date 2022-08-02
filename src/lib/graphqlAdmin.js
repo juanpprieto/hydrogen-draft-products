@@ -11,7 +11,7 @@ export async function graphqlAdmin(
     throw new Error('Must provide a `query` to the admin client');
   }
 
-  const endpoint = `https://${Oxygen.env.SHOPIFY_ADMIN_API_DOMAIN}/admin/api/${Oxygen.env.SHOPIFY_ADMIN_API_VERSION}/graphql.json`;
+  const endpoint = `https://${Oxygen.env.SHOPIFY_STORE_DOMAIN}/admin/api/${Oxygen.env.SHOPIFY_ADMIN_API_VERSION}/graphql.json`;
   const options = {
     method: 'POST',
     headers: {
