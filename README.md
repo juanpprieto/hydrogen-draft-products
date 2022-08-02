@@ -3,7 +3,7 @@
 This example illustrates how to render draft products in Hydrogen
 
 ### Approach
-— `/product/[handle].server.jsx` — looks for a `preview=true` query param. If found, it attempts to fetch the product data via the Admin API (can return drafts), otherwise fetch normally from the Storefront API.
+`/product/[handle].server.jsx` — looks for a `preview=true` query param. If found, it attempts to fetch the product data via the Admin API (can return drafts), otherwise fetch normally from the Storefront API.
 
 ### Required env vars
 - `SHOPIFY_ADMIN_API_VERSION`=2022-04
