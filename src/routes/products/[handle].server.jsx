@@ -24,7 +24,6 @@ export default function Product({request, response, params, search: searchString
       product = data?.product;
     }
   } else {
-    console.log('not preview...');
     // Not in preview mode, we fetch normally from Storefront API.
     const {data, error} = useShopQuery({
       query: PUBLISHED_PRODUCT_QUERY,
@@ -44,15 +43,9 @@ export default function Product({request, response, params, search: searchString
     padding: '0.25rem 0.5rem',
   }
 
-  /*
-    Note:
-    Because the [Admin API](https://shopify.dev/api/admin-graphql/2022-04/objects/Product)
-    and [Storefront API](https://shopify.dev/api/storefront/2022-04/objects/Product) product objects are slightly different,
-    I'd recommend having a `normalizeProduct(product)` function that ensures consistency across both APIs.
-  */
-const normalizedProduct = product
-  ? normalizeProduct(product)
-  : null;
+  const normalizedProduct = product
+    ? normalizeProduct(product)
+    : null;
 
   return (
     normalizedProduct
@@ -67,10 +60,16 @@ const normalizedProduct = product
   );
 }
 
+/*
+  Note:
+  Because the [Admin API](https://shopify.dev/api/admin-graphql/2022-04/objects/Product)
+  and [Storefront API](https://shopify.dev/api/storefront/2022-04/objects/Product) product objects are slightly different,
+  I'd recommend having a `normalizeProduct(product)` function that ensures consistency across both APIs.
+*/
 function normalizeProduct(rawProduct) {
+  // Add logic to make sure the AdminAPI and SFAPI product object is consistent
   return rawProduct;
 }
-
 
 // In preview, get product from the Admin API because it includes draft products
 const DRAFT_PRODUCT_QUERY = gql`
