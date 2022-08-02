@@ -1,0 +1,23 @@
+{
+  "name": "hello-draft-products",
+  "description": "An example demonstrating how to preview draft products in Hydrogen",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "shopify hydrogen dev",
+    "build": "shopify hydrogen build",
+    "preview": "shopify hydrogen preview"
+  },
+  "devDependencies": {
+    "@shopify/cli": "3.4.0",
+    "@shopify/cli-hydrogen": "3.4.0",
+    "vite": "^2.9.0"
+  },
+  "dependencies": {
+    "@shopify/hydrogen": "^1.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "author": "jbaz"
+}
