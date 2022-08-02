@@ -52,7 +52,7 @@ export default function Product({request, response, params, search: searchString
       ? <div>
           <div >Fetched via <span style={badgeStyle}>{isPreview ? 'Admin API' : 'Storefront API'}</span></div>
           <h1>Product {params.handle}</h1>
-          {normalizedProduct && (<p>Title: {normalizedProduct.title}</p>)}
+          <p>Title: {normalizedProduct.title}</p>
           <br />
           <Link to='/'>Back home</Link>
         </div>
